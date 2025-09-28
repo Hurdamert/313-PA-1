@@ -1,0 +1,25 @@
+                            Execution Time vs. File Size             
+T       |--------------------------------------------------------------------|
+i       |                                       * Small chunks (256B)        |
+m       |                                       + Large chunks (8–64KB)      |
+e  99.37|. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+        |                                                                    |
+(       |                                                                    |
+s       |                                                                    |
+)  64.13|. . . . . . . . . . . . . . . . . * . . . . . . . . . . . . . . . . |
+        |                                                                    |
+        |                                                                    |
+        |                                                                    |
+        |                 *                                                  |
+   28.90|. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |
+        |        *                                                           |
+        |    *                                                               |
+        |+++ +   +        +                +                                 |
+   -6.34|--------------------------------------------------------------------|
+         1                                16                               256
+                                File Size (MB)                 
+
+
+The main cause of this time increase/bottleneck is the size of MAX_MESSAGE. As the program can only transfer
+that amount of bytes per turn, the number of turns exponentially increases with file size.
+If MAX_MESSAGE is increased, then the number of turns would decrease thereby decreasing execution time.

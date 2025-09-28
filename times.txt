@@ -1,0 +1,15 @@
+for 100000000:
+real    0m5.615s
+user    0m0.162s
+sys     0m0.142s
+
+for 10000000:
+real    0m6.071s
+user    0m0.230s
+sys     0m0.250s
+
+for 1000:
+real    0m6.152s
+user    0m0.275s
+sys     0m0.191s
+
